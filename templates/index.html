@@ -1,3 +1,7 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
 <h1>Hello {{first_name|capitalize}}</h1>
 <p>Thi is my first website</p>
 <p>{{staff|safe}}</p>
@@ -5,3 +9,5 @@
 {% for placess in pizza %}
     {{placess}} <br>
 {% endfor %}
+
+{% endblock %}
