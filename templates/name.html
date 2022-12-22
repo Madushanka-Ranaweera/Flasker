@@ -2,8 +2,27 @@
 
 {% block content %}
 
+{% for message in get_flashed_messages() %}
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+  </div>
+    
+{% endfor%}
+
+
 {%if name %}
     <h1>Hello {{ name }}!!</h1>
+    <br>
+    <img src="{{url_for('static', filename='images/flasker.jpg')}}"
+    width=1100>
+    <br><br>
+    <p id="demo">This is stuff..</p>
+
+<script src="{{ url_for('static', filename='js/myfile.js')}}"></script>
 {% else %}
     <h1>What is your name?</h1>
     <br>
